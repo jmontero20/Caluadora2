@@ -21,11 +21,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void calcularResultado(View v){
-        double n1,n2,suma;
-        n1 = Double.parseDouble(num1.getText().toString());
-        n2 = Double.parseDouble(num2.getText().toString());
-        suma = n1 + n2;
-        resultado.setText(String.valueOf(suma));
+        if(validar()) {
+            double n1, n2, suma;
+            n1 = Double.parseDouble(num1.getText().toString());
+            n2 = Double.parseDouble(num2.getText().toString());
+            suma = n1 + n2;
+            resultado.setText(String.valueOf(suma));
+        }
+    }
 
+    public boolean validar(){
+        if(num1.getText().toString().isEmpty()){
+            num1.setError(getString(R.string.error_numero_uno));
+            num1.requestFocus();
+            return false;
+        }
+
+        if(num2.getText().toString().isEmpty()){
+            num2.setError(getString(R.string.error_numero_dos));
+            num2.requestFocus();
+            return false;
+        }
+
+        return true;
     }
 }
