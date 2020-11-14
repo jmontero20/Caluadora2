@@ -36,10 +36,13 @@
         android:id="@+id/btnCalcular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="calcularResultado"
         android:text="@string/calcular" />
 
     <TextView
         android:id="@+id/lblResultado"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="18sp" />
 </LinearLayout>
